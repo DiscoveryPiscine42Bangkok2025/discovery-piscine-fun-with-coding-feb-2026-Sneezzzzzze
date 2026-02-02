@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+table {
+    width: 100vw;
+    height: 100vh;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    border: 2px solid #333;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 5vw;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.first-cell {
+    background-color: #C0CA83;
+}
+
+.second-cell {
+    background-color: #F5C2AF;
+}
