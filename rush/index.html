@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        section { min-height: 100vh; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 flex">
+
+    <nav class="fixed left-0 top-0 h-screen w-20 md:w-64 bg-slate-900 text-white flex flex-col justify-center items-center md:items-start p-6 space-y-8 z-50">
+        <div class="hidden md:block mb-10 text-xl font-bold tracking-widest text-blue-400">PORTFOLIO</div>
+        
+        <a href="#home" class="group flex items-center space-x-4 hover:text-blue-400 transition">
+            <span class="text-sm font-medium uppercase hidden md:inline">Home</span>
+            <div class="h-2 w-2 bg-blue-400 rounded-full group-hover:scale-150 transition"></div>
+        </a>
+        
+        <a href="#work" class="group flex items-center space-x-4 hover:text-blue-400 transition">
+            <span class="text-sm font-medium uppercase hidden md:inline">My Work</span>
+            <div class="h-2 w-2 bg-gray-400 rounded-full group-hover:bg-blue-400 group-hover:scale-150 transition"></div>
+        </a>
+        
+        <a href="#contact" class="group flex items-center space-x-4 hover:text-blue-400 transition">
+            <span class="text-sm font-medium uppercase hidden md:inline">Get in Touch</span>
+            <div class="h-2 w-2 bg-gray-400 rounded-full group-hover:bg-blue-400 group-hover:scale-150 transition"></div>
+        </a>
+    </nav>
+
+    <main class="flex-1 ml-20 md:ml-64">
+
+        <section id="home" class="flex flex-col justify-center px-10 md:px-20 bg-white">
+            <h1 class="text-6xl md:text-8xl font-black text-slate-900 leading-none">
+                HELLO.<br><span class="text-blue-600">CREATIVE</span>
+            </h1>
+            <p class="mt-6 text-xl text-gray-500 max-w-lg">
+                I build digital experiences focused on game development, machine learning, and interactive web design.
+            </p>
+        </section>
+
+        <section id="work" class="flex flex-col justify-center px-10 md:px-20 bg-gray-100">
+            <h2 class="text-4xl font-bold mb-12">Featured Projects</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-2">Game Engine Tooling</h3>
+                    <p class="text-gray-600">Developing custom NPC behaviors and AI agents using modern algorithms.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-2">Interactive Simulations</h3>
+                    <p class="text-gray-600">Creating educational platforms and Discord-integrated community hubs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="flex flex-col justify-center px-10 md:px-20 bg-slate-900 text-white">
+            <h2 class="text-4xl font-bold mb-6">Let's Connect</h2>
+            <p class="text-gray-400 text-lg mb-8">Currently open for collaboration on new and exciting ventures.</p>
+            <form class="max-w-md space-y-4">
+                <input type="email" placeholder="Your Email" class="w-full p-4 bg-slate-800 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+                <textarea placeholder="Your Message" rows="4" class="w-full p-4 bg-slate-800 rounded-lg outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                <button class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-bold transition">Send Message</button>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>
