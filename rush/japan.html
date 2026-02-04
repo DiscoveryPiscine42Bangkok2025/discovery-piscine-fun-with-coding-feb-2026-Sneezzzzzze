@@ -12,17 +12,24 @@
 </head>
 <body class="bg-gray-50 text-gray-900 flex">
 
-    <nav class="fixed left-0 top-0 h-screen w-20 md:w-64 bg-slate-900 text-white flex flex-col justify-center items-center md:items-start p-6 space-y-8 z-50">
-        <div class="hidden md:block mb-10 text-xl font-bold tracking-widest text-blue-400"><a href="index.html">PORTFOLIO</a></div>
+
+    <button id="menu-btn" class="fixed top-4 left-4 z-50 md:hidden p-3 bg-slate-900 text-white rounded-lg shadow-lg hover:bg-slate-800 transition" aria-label="Toggle Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+
+    <nav id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-slate-900 text-white flex flex-col items-start p-6 space-y-8 z-40 transition-transform duration-300 transform -translate-x-full md:translate-x-0 overflow-y-auto">
+        <a href="index.html" class="hidden md:block mb-10 text-xl font-bold tracking-widest text-blue-400">PortHub</a>
         
         <a href="index.html" class="group flex items-center space-x-4 hover:text-blue-400 transition">
-            <span class="text-sm font-medium uppercase hidden md:inline">Home</span>
+            <span class="text-sm font-medium uppercase font-bold tracking-wider">Home</span>
             <div class="h-2 w-2 bg-blue-400 rounded-full group-hover:scale-150 transition"></div>
         </a>
 
         <details class="group w-full md:w-auto">
             <summary class="flex items-center justify-between md:justify-start space-x-4 cursor-pointer hover:text-blue-400 transition list-none">
-                <span class="text-sm font-bold uppercase tracking-wider hidden md:inline">JUNBEOM</span>
+                <span class="text-sm font-bold uppercase tracking-wider">JUNBEOM</span>
                 <span class="transition-transform duration-300 group-open:rotate-180">▲</span>
             </summary>
             <div class="flex flex-col ml-6 mt-4 space-y-4 border-l-2 border-slate-700 pl-4 animate-in fade-in slide-in-from-top-2 duration-300">
@@ -34,7 +41,7 @@
 
         <details class="group w-full md:w-auto" open>
             <summary class="flex items-center justify-between md:justify-start space-x-4 cursor-pointer hover:text-blue-400 transition list-none">
-                <span class="text-sm font-bold uppercase tracking-wider hidden md:inline">JAPAN</span>
+                <span class="text-sm font-bold uppercase tracking-wider">JAPAN</span>
                 <span class="transition-transform duration-300 group-open:rotate-180">▲</span>
             </summary>
             <div class="flex flex-col ml-6 mt-4 space-y-4 border-l-2 border-slate-700 pl-4 animate-in fade-in slide-in-from-top-2 duration-300">
@@ -44,8 +51,10 @@
             </div>
         </details>
     </nav>
+    
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden md:hidden glass transition-opacity" onclick="toggleMenu()"></div>
 
-    <main class="flex-1 ml-20 md:ml-64">
+    <main class="flex-1 ml-0 md:ml-64 transition-all duration-300">
     <section id="home" class="relative flex items-center px-6 bg-slate-50 profile-hero justify-center">
         <div class="absolute inset-0 overflow-hidden">
             <div class="absolute -top-[10%] -left-[10%] h-[40%] w-[40%] bg-blue-100 rounded-full blur-3xl opacity-60"></div>
@@ -88,7 +97,6 @@
     <div class="h-1 w-20 bg-blue-600 mx-auto mt-4 rounded-full"></div>
     </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Unity -->
             <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition group">
                 <div class="mb-4 p-3 bg-slate-50 rounded-xl w-fit group-hover:bg-blue-50 transition">
                     <img src="images/Unity-light.svg" alt="Unity" class="w-10 h-10 group-hover:scale-110 transition">
@@ -97,7 +105,6 @@
                 <p class="text-gray-600">2 Years experience, focusing on developing gameplay system, and integrating AI Agent toolkit</p>
             </div>
 
-            <!-- C#/C++ -->
             <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition group">
                 <div class="mb-4 p-3 bg-slate-50 rounded-xl w-fit group-hover:bg-blue-50 transition flex space-x-2">
                     <img src="images/C%23.svg" alt="C#" class="w-10 h-10 group-hover:scale-110 transition">
@@ -107,7 +114,6 @@
                 <p class="text-gray-600">3 Years experience alongside Unity and Arduino UNO.</p>
             </div>
 
-            <!-- Unreal Engine -->
             <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition group">
                 <div class="mb-4 p-3 bg-slate-50 rounded-xl w-fit group-hover:bg-blue-50 transition">
                     <img src="images/Unreal%20Engine-light.svg" alt="Unreal Engine" class="w-10 h-10 group-hover:scale-110 transition">
@@ -116,7 +122,6 @@
                 <p class="text-gray-600">1 Year Experience from studying in University.</p>
             </div>
                         
-            <!-- Python -->
             <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition group">
                 <div class="mb-4 p-3 bg-slate-50 rounded-xl w-fit group-hover:bg-blue-50 transition">
                     <img src="images/Python.svg" alt="Python" class="w-10 h-10 group-hover:scale-110 transition">
@@ -125,7 +130,6 @@
                 <p class="text-gray-600">3 Years experience both personal and academically. Including being a Teaching Assistant.</p>
             </div>
 
-            <!-- Education -->
             <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition group">
                 <div class="mb-4 p-3 bg-slate-50 rounded-xl w-fit group-hover:bg-blue-50 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-slate-700 group-hover:text-blue-600 transition" viewBox="0 0 24 24" fill="currentColor">
@@ -136,7 +140,6 @@
                 <p class="text-gray-600">Studying at King Mongkut's Institute of Technology Ladkrabang Faculty of Information Technology.</p>
             </div>
 
-            <!-- GameJam -->
             <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition group">
                 <div class="mb-4 p-3 bg-slate-50 rounded-xl w-fit group-hover:bg-blue-50 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-slate-700 group-hover:text-blue-600 transition" viewBox="0 0 24 24" fill="currentColor">
@@ -184,5 +187,26 @@
 
     </main>
 
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const links = sidebar.querySelectorAll('a');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
