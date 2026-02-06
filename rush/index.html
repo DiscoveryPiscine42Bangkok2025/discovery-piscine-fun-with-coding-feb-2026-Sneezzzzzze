@@ -73,12 +73,10 @@
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('overlay');
         const links = sidebar.querySelectorAll('a');
 
         function toggleMenu() {
             sidebar.classList.toggle('-translate-x-full');
-            overlay.classList.toggle('hidden');
         }
 
         menuBtn.addEventListener('click', toggleMenu);
